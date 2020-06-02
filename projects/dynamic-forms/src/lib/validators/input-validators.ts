@@ -2,7 +2,7 @@ import {FormControl, Validators} from '@angular/forms';
 
 
 export class InputValidators {
-  validatorsMap = {
+  static validatorsMap = {
     'email': {
       validators: [Validators.required, Validators.email],
       getErrorMessage: (form: FormControl) => {

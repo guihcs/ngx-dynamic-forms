@@ -24,7 +24,7 @@ export class TextInputComponent implements OnInit, ConfigurableInput {
     this.args = args;
 
     if (args.descriptor.type) {
-      this.validator = new InputValidators().validatorsMap[args.descriptor.type];
+      this.validator = InputValidators.validatorsMap[args.descriptor.type];
 
       if (this.validator)
         this.formControl.setValidators(this.validator.validators);
