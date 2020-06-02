@@ -1,0 +1,9 @@
+
+<label>
+  {{args.descriptor.label}}
+  <select [formControl]="formControl">
+    <option *ngFor="let val of args.descriptor.args" [ngValue]="val">
+      {{val}}
+    </option>
+  </select>
+</label>
