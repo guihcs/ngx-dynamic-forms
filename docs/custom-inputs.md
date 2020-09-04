@@ -1,8 +1,8 @@
 ---
 layout: docs
-permalink: ./docs/custom-input
+permalink: docs/custom-inputs
 ---
-## Defining custom form inputs
+# Defining custom form inputs
 
 With dynamic forms you can use your own components.
  Any angular component can be used with dynamic forms. 

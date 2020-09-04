@@ -1,7 +1,8 @@
 ---
 layout: docs
+permalink: /docs/nested-inputs
 ---
-## Nested Inputs
+# Nested Inputs
 
 You can nest inputs with dynamic forms.
 

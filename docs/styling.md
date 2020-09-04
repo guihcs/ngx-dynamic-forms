@@ -1,5 +1,6 @@
 ---
 layout: docs
+permalink: /docs/styling
 ---
 # Form Style
 

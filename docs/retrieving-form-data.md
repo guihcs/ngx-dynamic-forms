@@ -1,8 +1,9 @@
 ---
 layout: docs
+permalink: /docs/retrieving-form-data
 ---
 
-## Retrieving Form Data
+# Retrieving Form Data
 
 You can access the data inserted in the form with.
 
