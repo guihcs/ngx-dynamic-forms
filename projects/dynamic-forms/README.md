@@ -50,7 +50,7 @@ Add the dynamic-forms component to your page.
 
 And see the result :D
 
-![Example form](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/sampleform.png)
+![Example form](./assets/sampleform.png)
 
 The inputs are rendered in the defined order and uses any values in the field as default. 
 ## Get form data
@@ -119,7 +119,7 @@ export class User {
 }
 ```
 The result: 
-![Custom Input](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/custominput.png)
+![Custom Input](./assets/custominput.png)
 
 ## Nesting inputs
 
@@ -145,7 +145,7 @@ export class User {
 ```
 Result:
 
-![Nested Input](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/nestinput.png)
+![Nested Input](./assets/nestinput.png)
 
 The form data are nested too.
 
@@ -161,7 +161,3 @@ let formResult = {
   } 
 }
 ```
-
-## Further help
-
-Check the [GitHub](https://github.com/guilherme-fafic/ngx-dynamic-forms) page.
