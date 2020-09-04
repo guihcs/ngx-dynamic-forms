@@ -1,6 +1,6 @@
 ---
 layout: docs
-permalink: /docs/retrieving-form-data
+permalink: docs/retrieving-form-data
 ---
 
 # Retrieving Form Data
