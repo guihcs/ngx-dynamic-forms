@@ -2,6 +2,8 @@
 
 A dynamic form generator using class annotations.
 
+More info in [Dynamic Forms](https://guilherme-fafic.github.io/ngx-dynamic-forms/).
+
 
 ## How to install
 
