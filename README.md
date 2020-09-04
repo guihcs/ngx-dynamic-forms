@@ -53,9 +53,116 @@ And see the result :D
 ![Example form](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/sampleform.png)
 
 The inputs are rendered in the defined order and uses any values in the field as default. 
+## Get form data
+
+You can access the data inserted in the form with.
+
+```typescript
+class AppComponent {
+    /* ... */
+    @ViewChild(DynamicFormsComponent) dynamicForm: DynamicFormsComponent;
+    
+    ngAfterViewInit(): void {
+    
+        let formResult = this.dynamicForm.getResult();
+    
+    }
+}
+```
+
+The result is a json with field names equals to the annotated field.
+Filled with the form values.
+```javascript
+let formResult = {
+  name: 'Bob',
+  password: 'verysecurepassword',
+  email: ''  
+}
+```
+
+
+## Defining custom form inputs
+
+With dynamic forms you can use your own components.
+
+`ng generate component custom-input`
+
+Implement the ConfigurableInput interface.
+
+```typescript
+export class CustomInputComponent implements ConfigurableInput {
+  
+  formControl = new FormControl();  
+
+  applyArguments(args: any): any {
+    /* here you can use the args passed in the annotation 
+        to configure your input. */
+  }
+
+  getFormControl(): any {
+    return this.formControl;
+  }
+  
+}
+```
+
+Use the `@CustomInput` annotation in your model.
+
+```typescript
+export class User {
+
+  /* ... */
+
+  @CustomInput(CustomInputComponent, {label: "Custom Input", args: {}})
+  myCustomInput;
+
+}
+```
+The result: 
+![Custom Input](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/custominput.png)
+
+## Nesting inputs
+
+You can nest inputs with dynamic forms.
+
+```typescript
+export class NestedObject {
+
+  @FormInput({ label: "street", type: "text" })
+  street;
+
+  @FormInput({ label: "city", type: "text" })
+  city;  
+}
+
+export class User {
+
+    /* ... */
+
+    @NestedInput('Address', /* search depth */ 1)
+    address = new NestedObject();
+}
+```
+Result:
+
+![Nested Input](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/nestinput.png)
+
+The form data are nested too.
+
+```javascript
+let formResult = {
+  name: 'Bob',
+  password: 'verysecurepassword',
+  email: '',
+  myCustomInput: '',
+  address: {
+    street: '',
+    city: ''
+  } 
+}
+```
 
 ## Showcase
-
-The code has a show case to help you in development.
+The code has a showcase to help you in development if you want to help improve the library.
 
 Run with `ng serve`.
