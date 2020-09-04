@@ -1,24 +1,163 @@
 # DynamicForms
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+A dynamic form generator using class annotations.
 
-## Code scaffolding
 
-Run `ng generate component component-name --project dynamic-forms` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project dynamic-forms`.
-> Note: Don't forget to add `--project dynamic-forms` or else it will be added to the default project in your `angular.json` file. 
+## How to install
 
-## Build
+The default components use Angular Material.  Add with `ng add @angular/material`.  Install the library `ng add @guihss/ngx-dynamic-forms`.
+## Example
 
-Run `ng build dynamic-forms` to build the project. The build artifacts will be stored in the `dist/` directory.
+Annotate the class you want to generate the form.
 
-## Publishing
+```typescript
+export class User {
+  
+  @FormInput({ label: "Name", type: "text" })
+  name = 'Bob';
+  
+  @FormInput({ label: "Password", type: "password"})
+  password;
+  
+  @FormInput({ label: "Email", type: "email"})
+  email;
+}
+```
 
-After building your library with `ng build dynamic-forms`, go to the dist folder `cd dist/dynamic-forms` and run `npm publish`.
+Create an observable instance.
 
-## Running unit tests
+```typescript
+export class AppComponent {
+  title = 'dynamic-forms-showcase';
 
-Run `ng test dynamic-forms` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  user: Observable<User> = of<User>(new User());
+}
+```
 
-## Further help
+Add the dynamic-forms component to your page.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```angular2html
+<mat-card>
+  <h1> Example form </h1>
+
+  <dynamic-form
+    formStyleClass="dynamic-form"
+    [objectObservable]="user"
+  ></dynamic-form>
+
+</mat-card>
+```
+
+And see the result :D
+
+![Example form](./assets/sampleform.png)
+
+The inputs are rendered in the defined order and uses any values in the field as default. 
+## Get form data
+
+You can access the data inserted in the form with.
+
+```typescript
+class AppComponent {
+    /* ... */
+    @ViewChild(DynamicFormsComponent) dynamicForm: DynamicFormsComponent;
+    
+    ngAfterViewInit(): void {
+    
+        let formResult = this.dynamicForm.getResult();
+    
+    }
+}
+```
+
+The result is a json with field names equals to the annotated field.
+Filled with the form values.
+```javascript
+let formResult = {
+  name: 'Bob',
+  password: 'verysecurepassword',
+  email: ''  
+}
+```
+
+
+## Defining custom form inputs
+
+With dynamic forms you can use your own components.
+
+`ng generate component custom-input`
+
+Implement the ConfigurableInput interface.
+
+```typescript
+export class CustomInputComponent implements ConfigurableInput {
+  
+  formControl = new FormControl();  
+
+  applyArguments(args: any): any {
+    /* here you can use the args passed in the annotation 
+        to configure your input. */
+  }
+
+  getFormControl(): any {
+    return this.formControl;
+  }
+  
+}
+```
+
+Use the `@CustomInput` annotation in your model.
+
+```typescript
+export class User {
+
+  /* ... */
+
+  @CustomInput(CustomInputComponent, {label: "Custom Input", args: {}})
+  myCustomInput;
+
+}
+```
+The result: 
+![Custom Input](./assets/custominput.png)
+
+## Nesting inputs
+
+You can nest inputs with dynamic forms.
+
+```typescript
+export class NestedObject {
+
+  @FormInput({ label: "street", type: "text" })
+  street;
+
+  @FormInput({ label: "city", type: "text" })
+  city;  
+}
+
+export class User {
+
+    /* ... */
+
+    @NestedInput('Address', /* search depth */ 1)
+    address = new NestedObject();
+}
+```
+Result:
+
+![Nested Input](./assets/nestinput.png)
+
+The form data are nested too.
+
+```javascript
+let formResult = {
+  name: 'Bob',
+  password: 'verysecurepassword',
+  email: '',
+  myCustomInput: '',
+  address: {
+    street: '',
+    city: ''
+  } 
+}
+```
