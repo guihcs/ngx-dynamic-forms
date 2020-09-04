@@ -7,7 +7,8 @@ docs:
     url: /docs/nested-inputs.md
 
   - title: Retrieving Form Data
-    url: retrieving-form-data.md
+    url: /docs/retrieving-form-data.md
 
   - title: Styling
-    url: styling.md
+    url: /docs/styling.md
+
