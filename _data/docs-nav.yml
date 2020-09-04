@@ -1,10 +1,10 @@
 docs_title: Documentation
 docs:
   - title: Custom Inputs
-    url: /docs/custom-inputs.md
+    url: ./docs/custom-inputs
 
   - title: Nested Inputs
-    url: /docs/nested-inputs.md
+    url: /docs/nested-inputs
 
   - title: Retrieving Form Data
     url: /docs/retrieving-form-data.md
