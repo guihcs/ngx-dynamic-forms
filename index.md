@@ -1,37 +1,80 @@
-## Welcome to GitHub Pages
+# DynamicForms
 
-You can use the [editor on GitHub](https://github.com/guilherme-fafic/ngx-dynamic-forms/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A dynamic form generator using Typescript Decorators.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Quickstart
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The default components use Angular Material.  Add with `ng add @angular/material`.  Install the library `ng add @guihss/ngx-dynamic-forms`.
 
-```markdown
-Syntax highlighted code block
+Decorate the class you want to generate the form.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```typescript
+export class User {
+  
+  @FormInput({ label: "Name", type: "text" })
+  name = 'Bob';
+  
+  @FormInput({ label: "Password", type: "password"})
+  password;
+  
+  @FormInput({ label: "Email", type: "email"})
+  email;
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Create an observable instance.
 
-### Jekyll Themes
+```typescript
+export class AppComponent {
+  title = 'dynamic-forms-showcase';
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/guilherme-fafic/ngx-dynamic-forms/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+  user: Observable<User> = of<User>(new User());
+}
+```
 
-### Support or Contact
+Add the dynamic-forms component to your page.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```angular2html
+<mat-card>
+  <h1> Example form </h1>
+
+  <dynamic-form
+    formStyleClass="dynamic-form"
+    [objectObservable]="user"
+  ></dynamic-form>
+
+</mat-card>
+```
+
+And see the result :D
+
+![Example form](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/sampleform.png)
+
+The inputs are rendered in the defined order and uses any values in the field as default. 
+## Get form data
+
+You can access the data inserted in the form with.
+
+```typescript
+class AppComponent {
+    /* ... */
+    @ViewChild(DynamicFormsComponent) dynamicForm: DynamicFormsComponent;
+    
+    ngAfterViewInit(): void {
+    
+        let formResult = this.dynamicForm.getResult();
+    
+    }
+}
+```
+
+The result is a json with field names equals to the annotated field.
+Filled with the form values.
+```javascript
+let formResult = {
+  name: 'Bob',
+  password: 'verysecurepassword',
+  email: ''  
+}
+```
