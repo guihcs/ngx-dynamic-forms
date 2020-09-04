@@ -52,7 +52,7 @@ Add the dynamic-forms component to your page.
 
 And see the result :D
 
-![Example form](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/sform.png)
+![Example form](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/sampleform.png)
 
 The inputs are rendered in the defined order and uses any values in the field as default. 
 ## Get form data
