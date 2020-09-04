@@ -1,5 +1,5 @@
 
-baseurl: "/ngx-dynamic-forms" # the subpath of your site, e.g. /blog
+baseurl: "ngx-dynamic-forms" # the subpath of your site, e.g. /blog
 url: "https://guilherme-fafic.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
