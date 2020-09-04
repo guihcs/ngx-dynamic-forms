@@ -1,27 +1,61 @@
-# NgxDynamicForms
+# DynamicForms
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+A dynamic form generator using class annotations.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## How to install
 
-## Code scaffolding
+The default components use Angular Material.  Add with `ng add @angular/material`.  Install the library `ng add @guihss/ngx-dynamic-forms`.
+## Example
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Annotate the class you want to generate the form.
 
-## Build
+```typescript
+export class User {
+  
+  @FormInput({ label: "Name", type: "text" })
+  name = 'Bob';
+  
+  @FormInput({ label: "Password", type: "password"})
+  password;
+  
+  @FormInput({ label: "Email", type: "email"})
+  email;
+}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Create an observable instance.
 
-## Running unit tests
+```typescript
+export class AppComponent {
+  title = 'dynamic-forms-showcase';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  user: Observable<User> = of<User>(new User());
+}
+```
 
-## Running end-to-end tests
+Add the dynamic-forms component to your page.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```angular2html
+<mat-card>
+  <h1> Example form </h1>
 
-## Further help
+  <dynamic-form
+    formStyleClass="dynamic-form"
+    [objectObservable]="user"
+  ></dynamic-form>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+</mat-card>
+```
+
+And see the result :D
+
+![Example form](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/sampleform.png)
+
+The inputs are rendered in the defined order and uses any values in the field as default. 
+
+## Showcase
+
+The code has a show case to help you in development.
+
+Run with `ng serve`.
