@@ -35,7 +35,7 @@ export class AppComponent {
 
 Add the dynamic-forms component to your page.
 
-```angular2html
+```html
 <mat-card>
   <h1> Example form </h1>
 
