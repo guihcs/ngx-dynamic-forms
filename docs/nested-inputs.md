@@ -1,6 +1,6 @@
 ---
 layout: docs
-permalink: docs/nested-inputs
+permalink: /docs/nested-inputs
 ---
 # Nested Inputs
 

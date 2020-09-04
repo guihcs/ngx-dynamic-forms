@@ -1,6 +1,6 @@
 ---
 layout: docs
-permalink: docs/custom-inputs
+permalink: /docs/custom-inputs
 ---
 # Defining custom form inputs
 
