@@ -1,3 +1,6 @@
+---
+layout: home
+---
 # DynamicForms
 
 A dynamic form generator using Typescript Decorators.
