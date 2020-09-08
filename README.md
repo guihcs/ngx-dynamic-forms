@@ -1,4 +1,4 @@
-![npm badge](https://img.shields.io/npm/v/@guihss/ngx-dynamic-forms?color=green)
+[![npm badge](https://img.shields.io/npm/v/@guihss/ngx-dynamic-forms?color=green)](https://www.npmjs.com/package/@guihss/ngx-dynamic-forms)
 # DynamicForms
 
 A dynamic form generator using class annotations.
