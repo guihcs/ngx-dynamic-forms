@@ -1,5 +1,7 @@
 docs_title: Documentation
 docs:
+  - title: Default Inputs
+    url: /docs/default-inputs
   - title: Custom Inputs
     url: /docs/custom-inputs
 
