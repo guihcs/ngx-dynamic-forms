@@ -1,3 +1,4 @@
+![npm badge](https://img.shields.io/npm/v/@guihss/ngx-dynamic-forms?color=green)
 # DynamicForms
 
 A dynamic form generator using class annotations.
