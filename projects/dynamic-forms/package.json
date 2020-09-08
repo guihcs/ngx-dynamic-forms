@@ -1,6 +1,6 @@
 {
   "name": "@guihss/ngx-dynamic-forms",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "peerDependencies": {
     "@angular/common": "^9.1.9",
     "@angular/core": "^9.1.9"
@@ -8,12 +8,23 @@
   "dependencies": {
     "tslib": "^1.10.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guilherme-fafic/ngx-dynamic-forms"
+  },
+  "homepage": "https://guilherme-fafic.github.io/ngx-dynamic-forms/",
+  "author": {
+    "name": "Guilherme Henrique",
+    "email": "guilherme.fafic@gmail.com",
+    "url": "https://github.com/guilherme-fafic"
+  },
   "keywords": [
     "dynamic",
     "forms",
     "angular",
     "typescript",
     "material",
-    "reflection"
+    "reflection",
+    "decorator"
   ]
 }
