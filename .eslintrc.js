@@ -234,6 +234,7 @@ module.exports = {
         ],
         "prefer-arrow/prefer-arrow-functions": "error",
         "prefer-const": "error",
+        "quotes": ["error", "single"],
         "quote-props": [
             "error",
             "as-needed"
