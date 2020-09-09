@@ -29,7 +29,7 @@ The `@NestedInput` tag have a label as first parameter and search depth as secon
 You can chain nested objects with this tag. Use the search depth to control the nesting depth. 
 
 
-![Nested Input](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/nestinput.png)
+![Nested Input](../assets/img/nestinput.png)
 
 The result will be set as an object.
 
@@ -41,3 +41,9 @@ let formResult = {
     city: ''
   } 
 }
+```
+
+
+
+
+

@@ -45,4 +45,4 @@ export class User {
 The `@CustomInput` decorator accepts an args object that will be sent as input to the `applyArguments` method to apply component specific settings.
 
 
-![Custom Input](https://raw.githubusercontent.com/guilherme-fafic/ngx-dynamic-forms/master/projects/dynamic-forms/assets/custominput.png)
+![Custom Input](../assets/img/custominput.png)

@@ -4,3 +4,6 @@ _site
 .jekyll-metadata
 vendor
 .idea
+dist
+node_modules
+coverage
