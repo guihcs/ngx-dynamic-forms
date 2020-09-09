@@ -1,4 +1,7 @@
 [![npm badge](https://img.shields.io/npm/v/@guihss/ngx-dynamic-forms?color=green)](https://www.npmjs.com/package/@guihss/ngx-dynamic-forms)
+![CI](https://github.com/guilherme-fafic/ngx-dynamic-forms/workflows/CI/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4b482f64d6ec469fb9bc03969b869106)](https://www.codacy.com/manual/guilherme.fafic/ngx-dynamic-forms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=guilherme-fafic/ngx-dynamic-forms&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/4b482f64d6ec469fb9bc03969b869106)](https://www.codacy.com/manual/guilherme.fafic/ngx-dynamic-forms?utm_source=github.com&utm_medium=referral&utm_content=guilherme-fafic/ngx-dynamic-forms&utm_campaign=Badge_Coverage)
 # DynamicForms
 
 A dynamic form generator using Typescript Decorators.
