@@ -22,8 +22,9 @@ export class TextInputComponent implements OnInit, ConfigurableInput {
 
   applyArguments(args) {
     this.args = args;
+    if (!args) return;
 
-    if (args.descriptor.type) {
+    if (args?.descriptor.type) {
       this.validator = new InputValidators().validatorsMap[args.descriptor.type];
 
       if (this.validator)
@@ -31,7 +32,7 @@ export class TextInputComponent implements OnInit, ConfigurableInput {
 
     }
 
-    if (args.defaultValue) {
+    if (args?.defaultValue) {
       this.formControl.setValue(args.defaultValue);
     }
 

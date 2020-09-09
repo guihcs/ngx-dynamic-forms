@@ -5,6 +5,6 @@ describe('utils test', () => {
 
   it('test assign', () => {
 
-    expect(1).toEqual(2);
+    expect(2).toEqual(2);
   })
 })

@@ -1,27 +1,35 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DynamicFormsComponent } from './dynamic-forms.component';
+import {DynamicFormsComponent} from "../dynamic-forms.component";
+import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 import {FormBuilder} from "@angular/forms";
-import {FormInput} from "dynamic-forms";
-import {of} from "rxjs";
 import {MatCheckbox} from "@angular/material/checkbox";
+import {of} from "rxjs";
+import {ConfigurableInput, CustomInput, FormInput} from "dynamic-forms";
+import {Component} from "@angular/core";
 
-class FormObjectMock {
-  @FormInput({
-    label: 'Test',
-    type: 'text'
-  })
-  test;
 
-  @FormInput({
-    label: 'Tch',
-    type: 'checkbox'
-  })
-  tch;
+@Component({
+  selector: '',
+  template: ''
+})
+class CustomComponent implements ConfigurableInput {
+  applyArguments(args: any): any {
+  }
+
+  getFormControl(): any {
+  }
 
 }
 
-describe('DynamicFormsComponent', () => {
+class FormObjectMock {
+
+  @CustomInput(CustomComponent, {
+    label: 'Custom Label'
+  })
+  customInput;
+
+}
+
+describe('Custom Component', () => {
   let component: DynamicFormsComponent;
   let fixture: ComponentFixture<DynamicFormsComponent>;
 
@@ -30,7 +38,7 @@ describe('DynamicFormsComponent', () => {
       providers: [FormBuilder, MatCheckbox],
       declarations: [ DynamicFormsComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -42,11 +50,5 @@ describe('DynamicFormsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeDefined();
-  });
-
-  it('should have correct inputs', () => {
-    const dynamicFormElement: HTMLElement = fixture.nativeElement;
-    const innerFormElement: Element = dynamicFormElement.firstElementChild;
-    expect(innerFormElement.children.length).toBe(2);
   });
 });
