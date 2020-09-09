@@ -29,7 +29,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm run test-coverage ${{ format('{0}/coverage/', github.workspace) }}
+    - run: npm run test-coverage
     - run: |
         export CODACY_PROJECT_TOKEN=${{ secrets.CODACY_PROJECT_TOKEN }}
         bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r ${{ format('{0}/coverage/lcov.info', github.workspace) }} --project-token ${{ secrets.CODACY_PROJECT_TOKEN }}
