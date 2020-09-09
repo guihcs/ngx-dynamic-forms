@@ -1,7 +1,7 @@
 [![npm badge](https://img.shields.io/npm/v/@guihss/ngx-dynamic-forms?color=green)](https://www.npmjs.com/package/@guihss/ngx-dynamic-forms)
 # DynamicForms
 
-A dynamic form generator using class annotations.
+A dynamic form generator using Typescript Decorators.
 
 More info in [Dynamic Forms](https://guilherme-fafic.github.io/ngx-dynamic-forms/).
 

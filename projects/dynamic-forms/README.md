@@ -1,6 +1,8 @@
 # DynamicForms
 
-A dynamic form generator using class annotations.
+A dynamic form generator using Typescript Decorators.
+
+More info in [Dynamic Forms](https://guilherme-fafic.github.io/ngx-dynamic-forms/).
 
 
 ## How to install

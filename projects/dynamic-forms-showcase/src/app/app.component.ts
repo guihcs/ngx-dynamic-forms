@@ -19,6 +19,9 @@ export class AppComponent implements AfterViewInit{
 
     let formResult = this.dynamicForm.getResult();
 
+    console.log(formResult);
+
+
   }
 
 

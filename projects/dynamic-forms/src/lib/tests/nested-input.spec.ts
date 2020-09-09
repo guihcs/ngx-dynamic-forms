@@ -8,9 +8,16 @@ import {of} from "rxjs";
 
 class NestedInputModel {
 
+  @FormInput({label: 'f1'})
+  field1 = 1;
+  @FormInput({label: 'f2'})
+  field2 = 2;
+
 }
 
 class FormObjectMock {
+  @FormInput({label: 'f1'})
+  field1 = 1;
 
   @NestedInput('Title', 1)
   nestedInput = new NestedInputModel();
@@ -37,5 +44,22 @@ describe('Nested Input', () => {
 
   it('should create', () => {
     expect(component).toBeDefined();
+  });
+
+  it('should have correct input', () => {
+    const rootForm = fixture.debugElement.children[0];
+    expect(rootForm.children.length).toBe(4);
+  });
+
+  it('should return correct value', () => {
+    const formResult = component.getResult();
+
+    expect(formResult).toEqual({
+      field1: 1,
+      nestedInput: {
+        field1: 1,
+        field2: 2
+      }
+    });
   });
 });
