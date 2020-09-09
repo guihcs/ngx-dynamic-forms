@@ -30,6 +30,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run test-coverage
+    - run: ls ${{ format('{0}', github.workspace) }}
     - run: |
         export CODACY_PROJECT_TOKEN=${{ secrets.CODACY_PROJECT_TOKEN }}
         bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r ${{ format('{0}/coverage/lcov.info', github.workspace) }} --project-token ${{ secrets.CODACY_PROJECT_TOKEN }}
