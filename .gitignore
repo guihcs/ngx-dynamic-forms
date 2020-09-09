@@ -47,3 +47,5 @@ Thumbs.db
 
 .jekyll-cache
 _site
+
+.editorconfig
