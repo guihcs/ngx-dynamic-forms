@@ -169,6 +169,6 @@ let formResult = {
 ```
 
 ## Showcase
-The code has a showcase to help you in development if you want to help improve the library.
+The code has a showcase to help you in development if you want to improve the library.
 
 Run with `ng serve`.
