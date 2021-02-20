@@ -1,12 +1,12 @@
 [![npm badge](https://img.shields.io/npm/v/@guihss/ngx-dynamic-forms?color=green)](https://www.npmjs.com/package/@guihss/ngx-dynamic-forms)
-![CI](https://github.com/guilherme-fafic/ngx-dynamic-forms/workflows/CI/badge.svg)
+![CI](https://github.com/guihcs/ngx-dynamic-forms/workflows/CI/badge.svg)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4b482f64d6ec469fb9bc03969b869106)](https://www.codacy.com/manual/guilherme.fafic/ngx-dynamic-forms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=guilherme-fafic/ngx-dynamic-forms&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/4b482f64d6ec469fb9bc03969b869106)](https://www.codacy.com/manual/guilherme.fafic/ngx-dynamic-forms?utm_source=github.com&utm_medium=referral&utm_content=guilherme-fafic/ngx-dynamic-forms&utm_campaign=Badge_Coverage)
 # DynamicForms
 
 A dynamic form generator using Typescript Decorators.
 
-More info in [Dynamic Forms](https://guilherme-fafic.github.io/ngx-dynamic-forms/).
+More info in [Dynamic Forms](https://guihcs.github.io/ngx-dynamic-forms/).
 
 
 ## How to install
@@ -56,7 +56,7 @@ Add the dynamic-forms component to your page.
 
 And see the result :D
 
-![Example form](https://guilherme-fafic.github.io/ngx-dynamic-forms/assets/img/sampleform.png)
+![Example form](https://guihcs.github.io/ngx-dynamic-forms/assets/img/sampleform.png)
 
 The inputs are rendered in the defined order and uses any values in the field as default. 
 ## Get form data
@@ -125,7 +125,7 @@ export class User {
 }
 ```
 The result: 
-![Custom Input](https://guilherme-fafic.github.io/ngx-dynamic-forms/assets/img/custominput.png)
+![Custom Input](https://guihcs.github.io/ngx-dynamic-forms/assets/img/custominput.png)
 
 ## Nesting inputs
 
@@ -151,7 +151,7 @@ export class User {
 ```
 Result:
 
-![Nested Input](https://guilherme-fafic.github.io/ngx-dynamic-forms/assets/img/nestinput.png)
+![Nested Input](https://guihcs.github.io/ngx-dynamic-forms/assets/img/nestinput.png)
 
 The form data are nested too.
 
